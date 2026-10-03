@@ -1,0 +1,8 @@
+.gradle/
+.gradle-user-home/
+build/
+.vscode/
+bin/
+.jdk/
+*.zip
+*.log
