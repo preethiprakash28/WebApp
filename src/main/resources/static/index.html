@@ -3,23 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Application Boilerplate</title>
+    <title>User Registration</title>
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
     <header>
-        <h1>Application Foundation</h1>
+        <h1>Welcome to the Application</h1>
     </header>
+    
     <main>
         <section class="placeholder-section">
-            <h2>System Status</h2>
-            <p>The full-stack web application boilerplate is successfully running.</p>
-            <div id="js-status" class="status-box">JavaScript is loading...</div>
+            <h2>Create an Account</h2>
+            
+            <div id="message-box" class="status-box" style="display: none;"></div>
+            
+            <form id="registration-form">
+                <div class="form-group">
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required minlength="6">
+                </div>
+                
+                <button type="submit" class="submit-btn">Register</button>
+            </form>
         </section>
     </main>
+
     <footer>
-        <p>&copy; 2026 Foundation Set. Ready for authentication implementation.</p>
+        <p>&copy; 2026 Framework-Free Foundation.</p>
     </footer>
+
     <script src="/js/app.js"></script>
 </body>
 </html>

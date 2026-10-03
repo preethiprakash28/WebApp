@@ -50,4 +50,21 @@ class ApplicationTest {
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
         assertEquals(404, response.statusCode());
     }
+        @Test
+    void testRegistrationEndpoint() throws Exception {
+        // We use standard URL-encoded form data to avoid needing heavy JSON parsing dependencies
+        String uniqueEmail = "apptest_" + System.currentTimeMillis() + "%40example.com"; // %40 is the @ symbol
+        String formData = "name=TestApp&phone=9998887777&email=" + uniqueEmail + "&password=securepass";
+        
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create("http://localhost:8080/api/register"))
+                .header("Content-Type", "application/x-www-form-urlencoded")
+                .POST(HttpRequest.BodyPublishers.ofString(formData))
+                .build();
+
+        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+        
+        // We expect the server to successfully process it and return a 201 Created status
+        assertEquals(201, response.statusCode());
+    }
 }

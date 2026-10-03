@@ -11,7 +11,8 @@ dependencies {
     implementation 'com.mysql:mysql-connector-j:8.3.0'
     testImplementation platform('org.junit:junit-bom:5.10.2')
     testImplementation 'org.junit.jupiter:junit-jupiter'
-}
+    implementation 'org.mindrot:jbcrypt:0.4'
+}   
 application {
     mainClass = 'com.example.webapp.Application'
 }
